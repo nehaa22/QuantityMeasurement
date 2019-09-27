@@ -20,5 +20,11 @@ public class FeetTest {
         assertTrue(oneFeetOne.compare(oneFeetTwo));
     }
 
+    @Test
+    void givenTwoFeetAndTwoFeet_WhenCompare_ThenShouldNotBeEqual(){
+        Feet oneFeetOne = new Feet(1.0);
+        Feet twoFeetTwo=new Feet(2.0);
+        assertFalse(oneFeetOne.compare(twoFeetTwo));
+    }
 
 }
