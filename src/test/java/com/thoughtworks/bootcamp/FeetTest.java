@@ -13,4 +13,12 @@ public class FeetTest {
         assertTrue(zeroFeetOne.equals(zeroFeetTwo));
     }
 
+    @Test
+    void givenOneFeetAndOneFeet_WhenCompare_ThenShouldBeEqual(){
+        Feet oneFeetOne = new Feet(1.0);
+        Feet oneFeetTwo=new Feet(1.0);
+        assertTrue(oneFeetOne.compare(oneFeetTwo));
+    }
+
+
 }

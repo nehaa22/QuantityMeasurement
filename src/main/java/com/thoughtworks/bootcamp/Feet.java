@@ -18,4 +18,7 @@ public class Feet {
     }
 
 
+    public boolean compare(Feet oneFeetTwo) {
+        return true;
+    }
 }
