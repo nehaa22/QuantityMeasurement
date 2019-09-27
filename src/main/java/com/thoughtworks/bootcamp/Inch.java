@@ -17,7 +17,7 @@ public class Inch {
         return Double.compare(inch.value, value) == 0;
     }
 
-    public boolean compare(Inch oneInchTwo) {
-        return true;
+    public boolean compare(Inch inch) {
+        return equals(inch);
     }
 }
