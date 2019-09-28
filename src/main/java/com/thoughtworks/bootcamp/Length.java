@@ -5,10 +5,6 @@ public class Length {
     private final double value;
     private final Unit unit;
 
-    enum Unit {
-        feet,
-        inch
-    }
 
     public Length(double value, Unit unit) {
         this.value = value;
