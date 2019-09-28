@@ -23,9 +23,6 @@ public class Length {
             return false;
         }
 
-        if(this.value == 0.0&& ((Length) other).value==0.0) {
-            return true;
-        }
 
         if(this.unit!=((Length) other).unit){
             if(((Length) other).value== FEETTOINCH *value){
