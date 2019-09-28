@@ -4,6 +4,7 @@ public class Length {
 
     private final double value;
     private final Unit unit;
+    private final int FEETTOINCH = 12;
 
 
     public Length(double value, Unit unit) {
@@ -27,7 +28,10 @@ public class Length {
         }
 
         if(this.unit!=((Length) other).unit){
-            if(((Length) other).value==12*value){
+            if(((Length) other).value== FEETTOINCH *value){
+                return true;
+            }
+            if(value==FEETTOINCH*((Length) other).value){
                 return true;
             }
             return false;
