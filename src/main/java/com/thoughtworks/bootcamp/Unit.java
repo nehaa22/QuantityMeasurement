@@ -2,25 +2,18 @@ package com.thoughtworks.bootcamp;
 
 
 public enum Unit {
-    feet {
-        @Override
-        public double convertToBase(double value) {
-            return value * 12;
-        }
-    },
-    inch {
-        @Override
-        public double convertToBase(double value) {
-            return value * 1;
-        }
-    },
 
-    cm {
-        @Override
-        public double convertToBase(double value) {
-            return value * (1 / 2.54);
-        }
+    feet(12) ,
+    inch(1),
+    cm(1/2.54);
+
+    private final double initializevalue;
+
+    Unit(double conversionFactor){
+        this.initializevalue=conversionFactor;
+    }
+
+    public  double convertToBase(double value){
+       return value*initializevalue;
     };
-
-    public abstract double convertToBase(double value);
 }
