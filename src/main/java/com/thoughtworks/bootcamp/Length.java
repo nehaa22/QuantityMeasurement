@@ -12,26 +12,29 @@ public class Length {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object other) {
 
-        if (this == o) {
+        if (this == other) {
             return true;
         }
 
-        if (!(o instanceof Length)) {
+        if (!(other instanceof Length)) {
             return false;
         }
 
-        if(this.value == 0.0&& ((Length) o).value==0.0) {
+        if(this.value == 0.0&& ((Length) other).value==0.0) {
             return true;
         }
 
-        if(this.unit!=((Length) o).unit){
+        if(this.unit!=((Length) other).unit){
+            if(((Length) other).value==12*value){
+                return true;
+            }
             return false;
         }
 
 
-        Length length = (Length) o;
-        return Double.compare(length.value, value) == 0;
+        Length length = (Length) other;
+        return length.value== value;
     }
 }
