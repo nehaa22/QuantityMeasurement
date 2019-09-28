@@ -13,29 +13,25 @@ public class Length {
     }
 
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(Object object) {
 
-        if (this == other) {
+        if (this == object) {
             return true;
         }
 
-        if (!(other instanceof Length)) {
+        if (!(object instanceof Length)) {
             return false;
         }
 
+        Length other = (Length) object;
 
-        if(this.unit!=((Length) other).unit){
-            if(((Length) other).value== FEETTOINCH *value){
+        if(this.unit!=other.unit){
+            if(other.value== FEETTOINCH *value){
                 return true;
             }
-            if(value==FEETTOINCH*((Length) other).value){
-                return true;
-            }
-            return false;
+            return value==FEETTOINCH*other.value;
         }
 
-
-        Length length = (Length) other;
-        return length.value== value;
+        return other.value== value;
     }
 }

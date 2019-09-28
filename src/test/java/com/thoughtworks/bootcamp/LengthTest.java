@@ -99,6 +99,7 @@ public class LengthTest {
     void givenOneInchAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
         Length oneInch = new Length(1.0, Unit.inch);
         Length oneFeet = new Length(1.0, Unit.feet);
+
         assertNotEquals(oneInch, oneFeet);
     }
 
@@ -106,6 +107,7 @@ public class LengthTest {
     void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
         Length zeroInch = new Length(0.0, Unit.inch);
         Length zeroFeet = new Length(0.0, Unit.feet);
+
         assertEquals(zeroInch, zeroFeet);
     }
 
@@ -113,13 +115,15 @@ public class LengthTest {
     void givenZeroInchAndOneFeet_WhenCompare_ThenNOtShouldBeEqual() {
         Length zeroInch = new Length(0.0, Unit.inch);
         Length oneFeet = new Length(1.0, Unit.feet);
+
         assertNotEquals(zeroInch, oneFeet);
     }
 
     @Test
     void givenOneFeetAndTwelveInch_WhenCompare_ThenShouldBeEqual() {
-        Length twelveInch = new Length(12.0, Unit.inch);
         Length oneFeet = new Length(1.0, Unit.feet);
+        Length twelveInch = new Length(12.0, Unit.inch);
+
         assertEquals(oneFeet, twelveInch);
     }
 
@@ -127,6 +131,7 @@ public class LengthTest {
     void giventwelveInchAndOneFeet_WhenCompare_ThenShouldBeEqual() {
         Length twelveInch = new Length(12.0, Unit.inch);
         Length oneFeet = new Length(1.0, Unit.feet);
+
         assertEquals(twelveInch, oneFeet);
     }
 
