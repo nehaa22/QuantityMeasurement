@@ -7,13 +7,13 @@ public enum Unit {
     inch(1),
     cm(1/2.54);
 
-    private final double initializevalue;
+    private final double conversionFactor;
 
     Unit(double conversionFactor){
-        this.initializevalue=conversionFactor;
+        this.conversionFactor=conversionFactor;
     }
 
     public  double convertToBase(double value){
-       return value*initializevalue;
+       return value*conversionFactor;
     };
 }
