@@ -5,13 +5,20 @@ public enum Unit {
     feet {
         @Override
         public double convertToBase(double value) {
-            return value*12;
+            return value * 12;
         }
     },
     inch {
         @Override
         public double convertToBase(double value) {
-            return value;
+            return value * 1;
+        }
+    },
+
+    cm {
+        @Override
+        public double convertToBase(double value) {
+            return value * (1 / 2.54);
         }
     };
 

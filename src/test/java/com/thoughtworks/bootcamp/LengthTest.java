@@ -135,4 +135,12 @@ public class LengthTest {
         assertEquals(twelveInch, oneFeet);
     }
 
+    @Test
+    void givenoneInchAndTwoDotFiveFourCM_WhenCompare_ThenShouldBeEqual() {
+        Length oneInch = new Length(1.0, Unit.inch);
+        Length TwoDotFiveFourCM = new Length(2.54, Unit.cm);
+
+        assertEquals(oneInch, TwoDotFiveFourCM);
+    }
+
 }

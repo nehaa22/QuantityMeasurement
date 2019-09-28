@@ -4,7 +4,6 @@ public class Length {
 
     private final double value;
     private final Unit unit;
-    private final int FEETTOINCH = 12;
 
     public Length(double value, Unit unit) {
         this.value = value;
@@ -22,20 +21,17 @@ public class Length {
             return false;
         }
 
-        //return valuee==other.unit.convert(this)
         Length other = (Length) object;
 
-        //return value ==other.unit.convert()
+        return Math.abs(unit.convertToBase(value)-other.unit.convertToBase(other.value))<=0.01;
 
+    }
 
-
-        if(this.unit!=other.unit){
-            if(other.value== FEETTOINCH *value){
-                return true;
-            }
-            return value==FEETTOINCH*other.value;
-        }
-
-        return other.value== value;
+    @Override
+    public String toString() {
+        return "Length{" +
+                "value=" + value +
+                ", unit=" + unit +
+                '}';
     }
 }

@@ -22,4 +22,9 @@ public class UnitTest {
         Assertions.assertEquals(2,Unit.inch.convertToBase(2));
     }
 
+    @Test
+    public  void givenTwoFiftyFourCM_WhenConvertToInches_ThenShouldGetConvert(){
+        Assertions.assertEquals(1,Unit.cm.convertToBase(2.54),0.01);
+    }
+
 }
