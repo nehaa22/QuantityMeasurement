@@ -11,7 +11,7 @@ public enum Unit {
     inch {
         @Override
         public double convertToBase(double value) {
-            return 1;
+            return value;
         }
     };
 
