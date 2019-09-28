@@ -22,7 +22,7 @@ public class Length {
             return false;
         }
 
-        if(this.value == 0.0) {
+        if(this.value == 0.0&& ((Length) o).value==0.0) {
             return true;
         }
 
