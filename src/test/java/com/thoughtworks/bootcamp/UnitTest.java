@@ -12,4 +12,9 @@ public class UnitTest {
         Assertions.assertEquals(12,Unit.feet.convertToBase(1));
     }
 
+    @Test
+    public  void givenOneInch_WhenConvertToInches_ThenShouldGetConvert(){
+        Assertions.assertEquals(1,Unit.inch.convertToBase(1));
+    }
+
 }
