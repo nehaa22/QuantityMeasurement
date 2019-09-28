@@ -22,9 +22,14 @@ public class Length {
             return false;
         }
 
-        if (((Length) o).unit != this.unit) {
+        if(this.value == 0.0) {
+            return true;
+        }
+
+        if(this.unit!=((Length) o).unit){
             return false;
         }
+
 
         Length length = (Length) o;
         return Double.compare(length.value, value) == 0;

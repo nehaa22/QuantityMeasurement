@@ -102,4 +102,11 @@ public class LengthTest {
         assertNotEquals(oneInch, oneFeet);
     }
 
+    @Test
+    void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
+        Length zeroInch = new Length(0.0, Unit.inch);
+        Length zeroFeet = new Length(0.0, Unit.feet);
+        assertEquals(zeroInch, zeroFeet);
+    }
+
 }
