@@ -256,6 +256,24 @@ public class QuantityTest {
         assertEquals(oneGallon, ThreeDotSevenEightLitre);
     }
 
+    @Test
+    void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
 
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        Quantity anotherGallon = new Quantity(1, Unit.gallon);
+
+
+        assertEquals(new Quantity(2,Unit.gallon),oneGallon.add(anotherGallon));
+    }
+
+    @Test
+    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity anotherLitre = new Quantity(1, Unit.litre);
+
+
+        assertEquals(new Quantity(2,Unit.litre),oneLitre.add(anotherLitre));
+    }
 
 }
