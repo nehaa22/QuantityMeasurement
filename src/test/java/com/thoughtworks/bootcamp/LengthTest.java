@@ -204,5 +204,13 @@ public class LengthTest {
         assertEquals(2.0,zeroInch.add(oneInch));
     }
 
+    @Test
+    void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd(){
+        Length zeroInch=new Length(1,Unit.feet);
+        Length oneInch=new Length(1,Unit.feet);
+
+        assertEquals(2.0,zeroInch.add(oneInch));
+    }
+
 
 }
