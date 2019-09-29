@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LengthTest {
+public class QuantityTest {
 
     @Test
     void givenZeroFeetAndZeoFeet_WhenCompare_ThenShouldBeEqual() {
