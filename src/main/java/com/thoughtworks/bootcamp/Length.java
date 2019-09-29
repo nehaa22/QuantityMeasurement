@@ -23,7 +23,7 @@ public class Length {
 
         Length other = (Length) object;
 
-        return Math.abs(unit.convertToBase(value)-other.unit.convertToBase(other.value))<=0.01;
+        return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }
 
