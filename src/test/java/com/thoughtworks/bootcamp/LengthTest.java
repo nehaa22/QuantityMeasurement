@@ -1,6 +1,7 @@
 package com.thoughtworks.bootcamp;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LengthTest {
@@ -39,8 +40,8 @@ public class LengthTest {
 
     @Test
     void givenOneFeetAndNull_WhenCompare_ThenShouldNotBeEqual() {
-        Length oneFeetOne = new Length(1.0,Unit.feet);
-        Length nullObject =null;
+        Length oneFeetOne = new Length(1.0, Unit.feet);
+        Length nullObject = null;
 
         assertNotEquals(oneFeetOne, nullObject);
     }
@@ -54,23 +55,23 @@ public class LengthTest {
 
 
     @Test
-    void givenZeroInchAndZeoInch_WhenEquals_ThenShouldBeEqual(){
+    void givenZeroInchAndZeoInch_WhenEquals_ThenShouldBeEqual() {
         Length zeroInchOne = new Length(0.0, Unit.inch);
-        Length zeroInchTwo=new Length(0.0, Unit.inch);
+        Length zeroInchTwo = new Length(0.0, Unit.inch);
         assertEquals(zeroInchOne, zeroInchTwo);
     }
 
     @Test
-    void givenOneInchAndOneInch_WhenCompare_ThenShouldBeEqual(){
+    void givenOneInchAndOneInch_WhenCompare_ThenShouldBeEqual() {
         Length oneInchOne = new Length(1.0, Unit.inch);
-        Length oneInchTwo=new Length(1.0, Unit.inch);
+        Length oneInchTwo = new Length(1.0, Unit.inch);
         assertEquals(oneInchOne, oneInchTwo);
     }
 
     @Test
-    void givenOneInchAndTwoInch_WhenCompare_ThenShouldNotBeEqual(){
+    void givenOneInchAndTwoInch_WhenCompare_ThenShouldNotBeEqual() {
         Length oneInch = new Length(1.0, Unit.inch);
-        Length twoInch=new Length(2.0, Unit.inch);
+        Length twoInch = new Length(2.0, Unit.inch);
         assertNotEquals(oneInch, twoInch);
     }
 
@@ -84,7 +85,7 @@ public class LengthTest {
     @Test
     void givenOneInchAndNull_WhenCompare_ThenShouldNotBeEqual() {
         Length oneInch = new Length(1.0, Unit.inch);
-        Length nullObject =null;
+        Length nullObject = null;
         assertNotEquals(oneInch, nullObject);
     }
 
@@ -134,6 +135,7 @@ public class LengthTest {
 
         assertEquals(twelveInch, oneFeet);
     }
+
     @Test
     void givenOneYardAndOneYard_WhenCompare_ThenShouldBeEqual() {
         Length twelveInch = new Length(1.0, Unit.yard);
@@ -141,18 +143,27 @@ public class LengthTest {
 
         assertEquals(twelveInch, oneFeet);
     }
+
     @Test
     void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
         Length twelveInch = new Length(2.0, Unit.yard);
         Length oneFeet = new Length(1.0, Unit.yard);
 
         assertNotEquals(twelveInch, oneFeet);
-    }@Test
+    }
+
+    @Test
     void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
         Length oneYard = new Length(1.0, Unit.yard);
         Length threeFeet = new Length(3.0, Unit.feet);
 
         assertEquals(oneYard, threeFeet);
+    } @Test
+    void givenOneYardAndThirtySixInch_WhenCompare_ThenShouldBeEqual() {
+        Length oneYard = new Length(1.0, Unit.yard);
+        Length thirtySixFeet = new Length(36.0, Unit.inch);
+
+        assertEquals(oneYard, thirtySixFeet);
     }
 //
 //    @Test
