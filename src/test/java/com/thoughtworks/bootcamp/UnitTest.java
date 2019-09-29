@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class UnitTest {
 
     @Test
-    void givenOneFeet_WhenConvertToThelveInches_ThenShouldGetConvert(){
+    void givenOneFeet_WhenConvertToTwelveInches_ThenShouldGetConvert(){
         Assertions.assertEquals(12,Unit.feet.convertToBase(1));
     }
 
@@ -21,6 +21,13 @@ class UnitTest {
     void givenTwoInch_WhenConvertToInches_ThenShouldGetConvert(){
         Assertions.assertEquals(2,Unit.inch.convertToBase(2));
     }
+
+    @Test
+    void givenOneYard_WhenConvertToFeet_ThenShouldGetConvert(){
+        Assertions.assertEquals(36,Unit.yard.convertToBase(1));
+    }
+
+
 
 //    @Test
 //    void givenTwoFiftyFourCM_WhenConvertToInches_ThenShouldGetConvert(){

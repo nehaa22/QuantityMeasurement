@@ -34,4 +34,8 @@ public class Length {
                 ", unit=" + unit +
                 '}';
     }
+
+    public double add(Length anotherZero) {
+        return 0;
+    }
 }

@@ -180,13 +180,13 @@ public class LengthTest {
 
         assertNotEquals(oneYard, sixFeet);
     }
-//
-//    @Test
-//    void givenoneInchAndTwoDotFiveFourCM_WhenCompare_ThenShouldBeEqual() {
-//        Length oneInch = new Length(1.0, Unit.inch);
-//        Length TwoDotFiveFourCM = new Length(2.54, Unit.cm);
-//
-//        assertEquals(oneInch, TwoDotFiveFourCM);
-//    }
+
+    @Test
+    void givenTwoZeroInch_WhenAdd_ThenShouldAdd(){
+        Length zeroInch=new Length(0,Unit.inch);
+        Length anotherZero=new Length(0,Unit.inch);
+
+        assertEquals(0.0,zeroInch.add(anotherZero));
+    }
 
 }
