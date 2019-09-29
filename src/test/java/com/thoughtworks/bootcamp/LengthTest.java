@@ -134,13 +134,33 @@ public class LengthTest {
 
         assertEquals(twelveInch, oneFeet);
     }
-
     @Test
-    void givenoneInchAndTwoDotFiveFourCM_WhenCompare_ThenShouldBeEqual() {
-        Length oneInch = new Length(1.0, Unit.inch);
-        Length TwoDotFiveFourCM = new Length(2.54, Unit.cm);
+    void givenOneYardAndOneYard_WhenCompare_ThenShouldBeEqual() {
+        Length twelveInch = new Length(1.0, Unit.yard);
+        Length oneFeet = new Length(1.0, Unit.yard);
 
-        assertEquals(oneInch, TwoDotFiveFourCM);
+        assertEquals(twelveInch, oneFeet);
     }
+    @Test
+    void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
+        Length twelveInch = new Length(2.0, Unit.yard);
+        Length oneFeet = new Length(1.0, Unit.yard);
+
+        assertNotEquals(twelveInch, oneFeet);
+    }@Test
+    void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
+        Length oneYard = new Length(1.0, Unit.yard);
+        Length threeFeet = new Length(3.0, Unit.feet);
+
+        assertEquals(oneYard, threeFeet);
+    }
+//
+//    @Test
+//    void givenoneInchAndTwoDotFiveFourCM_WhenCompare_ThenShouldBeEqual() {
+//        Length oneInch = new Length(1.0, Unit.inch);
+//        Length TwoDotFiveFourCM = new Length(2.54, Unit.cm);
+//
+//        assertEquals(oneInch, TwoDotFiveFourCM);
+//    }
 
 }
