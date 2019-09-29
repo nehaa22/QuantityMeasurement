@@ -186,7 +186,7 @@ public class LengthTest {
         Length zeroInch=new Length(0,Unit.inch);
         Length anotherZero=new Length(0,Unit.inch);
 
-        assertEquals(0.0,zeroInch.add(anotherZero));
+        assertEquals(new Length(0.0,Unit.inch),zeroInch.add(anotherZero));
     }
 
     @Test
@@ -194,22 +194,14 @@ public class LengthTest {
         Length zeroInch = new Length(0, Unit.inch);
         Length oneInch = new Length(1, Unit.inch);
 
-        assertEquals(1.0, zeroInch.add(oneInch));
+        assertEquals(new Length(1.0,Unit.inch), zeroInch.add(oneInch));
     }
     @Test
     void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd(){
         Length zeroInch=new Length(1,Unit.inch);
         Length oneInch=new Length(1,Unit.inch);
 
-        assertEquals(2.0,zeroInch.add(oneInch));
-    }
-
-    @Test
-    void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd(){
-        Length zeroInch=new Length(1,Unit.feet);
-        Length oneInch=new Length(1,Unit.feet);
-
-        assertEquals(2.0,zeroInch.add(oneInch));
+        assertEquals(new Length(2.0,Unit.inch),zeroInch.add(oneInch));
     }
 
 

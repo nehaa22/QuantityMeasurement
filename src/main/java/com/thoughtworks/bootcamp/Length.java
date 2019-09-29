@@ -35,8 +35,8 @@ public class Length {
                 '}';
     }
 
-    public double add(Length anotherZero) {
+    public Length add(Length another) {
 
-        return this.value+anotherZero.value;
+        return new Length(this.value+another.value,Unit.inch);
     }
 }
