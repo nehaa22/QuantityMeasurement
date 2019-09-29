@@ -159,6 +159,7 @@ public class LengthTest {
 
         assertEquals(oneYard, threeFeet);
     }
+
     @Test
     void givenOneYardAndThirtySixInch_WhenCompare_ThenShouldBeEqual() {
         Length oneYard = new Length(1.0, Unit.yard);
@@ -166,6 +167,7 @@ public class LengthTest {
 
         assertEquals(oneYard, thirtySixFeet);
     }
+
     @Test
     void givenOneYardAndSixInch_WhenCompare_ThenShouldNotBeEqual() {
         Length oneYard = new Length(1.0, Unit.yard);
@@ -173,6 +175,7 @@ public class LengthTest {
 
         assertNotEquals(oneYard, sixInch);
     }
+
     @Test
     void givenOneYardAndSixFeet_WhenCompare_ThenShouldNotBeEqual() {
         Length oneYard = new Length(1.0, Unit.yard);
@@ -182,11 +185,11 @@ public class LengthTest {
     }
 
     @Test
-    void givenTwoZeroInch_WhenAdd_ThenShouldAdd(){
-        Length zeroInch=new Length(0,Unit.inch);
-        Length anotherZero=new Length(0,Unit.inch);
+    void givenTwoZeroInch_WhenAdd_ThenShouldAdd() {
+        Length zeroInch = new Length(0, Unit.inch);
+        Length anotherZero = new Length(0, Unit.inch);
 
-        assertEquals(new Length(0.0,Unit.inch),zeroInch.add(anotherZero));
+        assertEquals(new Length(0.0, Unit.inch), zeroInch.add(anotherZero));
     }
 
     @Test
@@ -194,14 +197,31 @@ public class LengthTest {
         Length zeroInch = new Length(0, Unit.inch);
         Length oneInch = new Length(1, Unit.inch);
 
-        assertEquals(new Length(1.0,Unit.inch), zeroInch.add(oneInch));
+        assertEquals(new Length(1.0, Unit.inch), zeroInch.add(oneInch));
     }
-    @Test
-    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd(){
-        Length zeroInch=new Length(1,Unit.inch);
-        Length oneInch=new Length(1,Unit.inch);
 
-        assertEquals(new Length(2.0,Unit.inch),zeroInch.add(oneInch));
+    @Test
+    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
+        Length zeroInch = new Length(1, Unit.inch);
+        Length oneInch = new Length(1, Unit.inch);
+
+        assertEquals(new Length(2.0, Unit.inch), zeroInch.add(oneInch));
+    }
+
+    @Test
+    void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
+        Length oneInch = new Length(1, Unit.inch);
+        Length oneFeet = new Length(1, Unit.feet);
+
+        assertEquals(new Length(13.0, Unit.inch), oneFeet.add(oneInch));
+    }
+
+    @Test
+    void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
+        Length oneInch = new Length(1, Unit.inch);
+        Length oneFeet = new Length(1, Unit.feet);
+
+        assertEquals(new Length(13.0, Unit.inch), oneInch.add(oneFeet));
     }
 
 
