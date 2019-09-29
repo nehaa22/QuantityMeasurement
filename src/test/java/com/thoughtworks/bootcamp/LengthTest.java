@@ -189,4 +189,12 @@ public class LengthTest {
         assertEquals(0.0,zeroInch.add(anotherZero));
     }
 
+    @Test
+    void givenZeroInchAndOneInch_WhenAdd_ThenShouldAdd(){
+        Length zeroInch=new Length(0,Unit.inch);
+        Length oneInch=new Length(1,Unit.inch);
+
+        assertEquals(1.0,zeroInch.add(oneInch));
+    }
+
 }
