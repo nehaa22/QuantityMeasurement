@@ -1,11 +1,11 @@
 package com.thoughtworks.bootcamp;
 
-public class Length {
+public class Quantity {
 
     private final double value;
     private final Unit unit;
 
-    public Length(double value, Unit unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -17,11 +17,11 @@ public class Length {
             return true;
         }
 
-        if (!(object instanceof Length)) {
+        if (!(object instanceof Quantity)) {
             return false;
         }
 
-        Length other = (Length) object;
+        Quantity other = (Quantity) object;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
@@ -35,8 +35,8 @@ public class Length {
                 '}';
     }
 
-    public Length add(Length another) {
+    public Quantity add(Quantity another) {
 
-        return new Length(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
     }
 }
