@@ -10,7 +10,6 @@ public class QuantityTest {
     void givenZeroFeetAndZeoFeet_WhenCompare_ThenShouldBeEqual() {
         Quantity zeroFeetOne = new Quantity(0.0, Unit.feet);
         Quantity zeroFeetTwo = new Quantity(0.0, Unit.feet);
-
         assertEquals(zeroFeetOne, zeroFeetTwo);
     }
 
@@ -18,7 +17,6 @@ public class QuantityTest {
     void givenOneFeetAndOneFeet_WhenCompare_ThenShouldBeEqual() {
         Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
         Quantity oneFeetTwo = new Quantity(1.0, Unit.feet);
-
         assertEquals(oneFeetOne, oneFeetTwo);
     }
 
@@ -26,7 +24,6 @@ public class QuantityTest {
     void givenTwoFeetAndTwoFeet_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
         Quantity twoFeetTwo = new Quantity(2.0, Unit.feet);
-
         assertNotEquals(oneFeetOne, twoFeetTwo);
     }
 
@@ -34,7 +31,6 @@ public class QuantityTest {
     void givenOneFeetAndString_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
         String dummyString = "TDD";
-
         assertNotEquals(oneFeetOne, dummyString);
     }
 
@@ -42,14 +38,12 @@ public class QuantityTest {
     void givenOneFeetAndNull_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
         Quantity nullObject = null;
-
         assertNotEquals(oneFeetOne, nullObject);
     }
 
     @Test
     void givenSameObect_WhenCompare_ThenShouldBeEqual() {
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
-
         assertEquals(oneFeet, oneFeet);
     }
 
@@ -92,7 +86,6 @@ public class QuantityTest {
     @Test
     void givenSameInchObejct_WhenCompare_ThenShouldBeEqual() {
         Quantity oneInch = new Quantity(1.0, Unit.inch);
-
         assertEquals(oneInch, oneInch);
     }
 
@@ -100,7 +93,6 @@ public class QuantityTest {
     void givenOneInchAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneInch = new Quantity(1.0, Unit.inch);
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
-
         assertNotEquals(oneInch, oneFeet);
     }
 
@@ -108,7 +100,6 @@ public class QuantityTest {
     void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
         Quantity zeroInch = new Quantity(0.0, Unit.inch);
         Quantity zeroFeet = new Quantity(0.0, Unit.feet);
-
         assertEquals(zeroInch, zeroFeet);
     }
 
@@ -116,7 +107,6 @@ public class QuantityTest {
     void givenZeroInchAndOneFeet_WhenCompare_ThenNOtShouldBeEqual() {
         Quantity zeroInch = new Quantity(0.0, Unit.inch);
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
-
         assertNotEquals(zeroInch, oneFeet);
     }
 
@@ -124,7 +114,6 @@ public class QuantityTest {
     void givenOneFeetAndTwelveInch_WhenCompare_ThenShouldBeEqual() {
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
         Quantity twelveInch = new Quantity(12.0, Unit.inch);
-
         assertEquals(oneFeet, twelveInch);
     }
 
@@ -140,7 +129,6 @@ public class QuantityTest {
     void givenOneYardAndOneYard_WhenCompare_ThenShouldBeEqual() {
         Quantity twelveInch = new Quantity(1.0, Unit.yard);
         Quantity oneFeet = new Quantity(1.0, Unit.yard);
-
         assertEquals(twelveInch, oneFeet);
     }
 
@@ -148,7 +136,6 @@ public class QuantityTest {
     void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
         Quantity twoYard = new Quantity(2.0, Unit.yard);
         Quantity oneYard = new Quantity(1.0, Unit.yard);
-
         assertNotEquals(twoYard, oneYard);
     }
 
@@ -156,7 +143,6 @@ public class QuantityTest {
     void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
         Quantity oneYard = new Quantity(1.0, Unit.yard);
         Quantity threeFeet = new Quantity(3.0, Unit.feet);
-
         assertEquals(oneYard, threeFeet);
     }
 
@@ -172,7 +158,6 @@ public class QuantityTest {
     void givenOneYardAndSixInch_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneYard = new Quantity(1.0, Unit.yard);
         Quantity sixInch = new Quantity(6.0, Unit.inch);
-
         assertNotEquals(oneYard, sixInch);
     }
 
@@ -180,7 +165,6 @@ public class QuantityTest {
     void givenOneYardAndSixFeet_WhenCompare_ThenShouldNotBeEqual() {
         Quantity oneYard = new Quantity(1.0, Unit.yard);
         Quantity sixFeet = new Quantity(6.0, Unit.feet);
-
         assertNotEquals(oneYard, sixFeet);
     }
 
@@ -188,7 +172,6 @@ public class QuantityTest {
     void givenTwoZeroInch_WhenAdd_ThenShouldAdd() {
         Quantity zeroInch = new Quantity(0, Unit.inch);
         Quantity anotherZero = new Quantity(0, Unit.inch);
-
         assertEquals(new Quantity(0.0, Unit.inch), zeroInch.add(anotherZero));
     }
 
@@ -204,7 +187,6 @@ public class QuantityTest {
     void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
         Quantity zeroInch = new Quantity(1, Unit.inch);
         Quantity oneInch = new Quantity(1, Unit.inch);
-
         assertEquals(new Quantity(2.0, Unit.inch), zeroInch.add(oneInch));
     }
 
@@ -212,7 +194,6 @@ public class QuantityTest {
     void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
         Quantity oneInch = new Quantity(1, Unit.inch);
         Quantity oneFeet = new Quantity(1, Unit.feet);
-
         assertEquals(new Quantity(13.0, Unit.inch), oneFeet.add(oneInch));
     }
 
@@ -220,7 +201,6 @@ public class QuantityTest {
     void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
         Quantity oneInch = new Quantity(1, Unit.inch);
         Quantity oneFeet = new Quantity(1, Unit.feet);
-
         assertEquals(new Quantity(13.0, Unit.inch), oneInch.add(oneFeet));
     }
 
@@ -228,13 +208,11 @@ public class QuantityTest {
     void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd() {
         Quantity onefeet = new Quantity(1, Unit.feet);
         Quantity oneFeet = new Quantity(1, Unit.feet);
-
         assertEquals(new Quantity(2.0, Unit.feet), onefeet.add(oneFeet));
     }
 
     @Test
     void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
-
         Quantity oneGallon = new Quantity(1, Unit.gallon);
         Quantity anotherOneGallon = new Quantity(1, Unit.gallon);
 
@@ -252,7 +230,6 @@ public class QuantityTest {
 
     @Test
     void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
-
         Quantity oneGallon = new Quantity(1, Unit.gallon);
         Quantity ThreeDotSevenEightLitre = new Quantity(3.78, Unit.litre);
 
@@ -261,7 +238,6 @@ public class QuantityTest {
 
     @Test
     void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
-
         Quantity oneGallon = new Quantity(1, Unit.gallon);
         Quantity anotherGallon = new Quantity(1, Unit.gallon);
         assertEquals(new Quantity(2, Unit.gallon), oneGallon.add(anotherGallon));
@@ -269,7 +245,6 @@ public class QuantityTest {
 
     @Test
     void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
-
         Quantity oneLitre = new Quantity(1, Unit.litre);
         Quantity anotherLitre = new Quantity(1, Unit.litre);
         assertEquals(new Quantity(2, Unit.litre), oneLitre.add(anotherLitre));
@@ -277,7 +252,6 @@ public class QuantityTest {
 
     @Test
     void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
-
         Quantity oneLitre = new Quantity(1, Unit.litre);
         Quantity oneGallon = new Quantity(1, Unit.gallon);
         assertEquals(new Quantity(4.78, Unit.litre), oneLitre.add(oneGallon));
@@ -334,7 +308,6 @@ public class QuantityTest {
 
     @Test
     void givenOneLitreAndOneFeet_WhenAdd_ThenShouldThrowException() {
-
         Quantity oneLitre = new Quantity(1, Unit.litre);
         Quantity oneFeet = new Quantity(1, Unit.feet);
         assertThrows(IllegalArgumentException.class, () -> {
@@ -343,7 +316,6 @@ public class QuantityTest {
     }
     @Test
     void givenOneLitreAndOneInch_WhenAdd_ThenShouldThrowException() {
-
         Quantity oneLitre = new Quantity(1, Unit.litre);
         Quantity oneInch = new Quantity(1, Unit.inch);
         assertThrows(IllegalArgumentException.class, () -> {

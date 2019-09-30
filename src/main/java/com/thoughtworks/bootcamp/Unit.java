@@ -19,7 +19,6 @@ public enum Unit {
         return value * conversionFactor;
     }
 
-
     public Unit getBaseUnit(Unit unit) {
         if(unit == inch || unit == feet || unit == yard)
             return inch;

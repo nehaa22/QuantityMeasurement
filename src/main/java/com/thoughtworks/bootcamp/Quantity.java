@@ -23,36 +23,18 @@ public class Quantity {
 
         Quantity other = (Quantity) object;
 
-        if (this.unit.getBaseUnit(this.unit) != other.unit.getBaseUnit(other.unit))
+        if (!(this.unit.getBaseUnit(this.unit).equals( other.unit.getBaseUnit(other.unit))))
             return false;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }
 
-    @Override
-    public String toString() {
-        return "Length{" +
-                "value=" + value +
-                ", unit=" + unit +
-                '}';
-    }
-
     public Quantity add(Quantity another) {
 
         if (this.unit.getBaseUnit(this.unit) != another.unit.getBaseUnit(another.unit)){
-            throw new IllegalArgumentException("Unit should be od same type");
+            throw new IllegalArgumentException("Unit should be of same type");
         }
-
-//        if(this.unit == Unit.litre &&  another.unit == Unit.feet || this.unit == Unit.feet &&  another.unit == Unit.litre) {
-//            throw new IllegalArgumentException("Unit should be od same type");
-//        }
-//        if(this.unit == Unit.litre &&  another.unit == Unit.inch || this.unit == Unit.inch &&  another.unit == Unit.litre) {
-//            throw new IllegalArgumentException("Unit should be od same type");
-//        }
-//        if(this.unit == Unit.litre &&  another.unit == Unit.yard || this.unit == Unit.yard &&  another.unit == Unit.litre) {
-//            throw new IllegalArgumentException("Unit should be od same type");
-//        }
 
         if (this.unit == Unit.inch || this.unit == Unit.feet) {
             return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
