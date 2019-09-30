@@ -23,11 +23,7 @@ public class Quantity {
 
         Quantity other = (Quantity) object;
 
-        if (this.unit == Unit.litre && other.unit == Unit.inch || this.unit == Unit.inch && other.unit == Unit.litre)
-            return false;
-        if (this.unit == Unit.litre && other.unit == Unit.feet || this.unit == Unit.feet && other.unit == Unit.litre)
-            return false;
-        if (this.unit == Unit.gallon && other.unit == Unit.inch || this.unit == Unit.inch && other.unit == Unit.gallon)
+        if (this.unit.getBaseUnit(this.unit) != other.unit.getBaseUnit(other.unit))
             return false;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
@@ -43,6 +39,11 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
+
+        if(this.unit == Unit.litre &&  another.unit == Unit.feet || this.unit == Unit.feet &&  another.unit == Unit.litre) {
+            throw new IllegalArgumentException("Unit should be od same type");
+        }
+
         if (this.unit == Unit.inch || this.unit == Unit.feet) {
             return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
         }

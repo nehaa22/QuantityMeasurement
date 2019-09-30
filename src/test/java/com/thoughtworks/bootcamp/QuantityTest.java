@@ -288,6 +288,7 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1, Unit.gallon);
         Quantity oneFeet = new Quantity(1, Unit.feet);
         assertNotEquals(oneGallon, oneFeet);
+
     }
 
     @Test
@@ -331,5 +332,16 @@ public class QuantityTest {
         assertNotEquals(oneGallon, oneYard);
     }
 
+    @Test
+    void givenOneLitreAndOneFeet_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneFeet);
+        });
+    }
+
 
 }
+

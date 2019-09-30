@@ -9,7 +9,6 @@ public enum Unit {
     gallon(3.78),
     litre(1);
 
-
     private final double conversionFactor;
 
     Unit(double conversionFactor) {
@@ -18,5 +17,13 @@ public enum Unit {
 
     public double convertToBase(double value) {
         return value * conversionFactor;
+    }
+
+
+    public Unit getBaseUnit(Unit unit) {
+        if(unit == inch || unit == feet || unit == yard)
+            return inch;
+        else
+            return litre;
     }
 }
