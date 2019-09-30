@@ -275,13 +275,13 @@ public class QuantityTest {
         assertEquals(new Quantity(2, Unit.litre), oneLitre.add(anotherLitre));
     }
 
-//    @Test
-//    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
-//
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        assertEquals(new Quantity(4.78, Unit.litre), oneLitre.add(oneGallon));
-//    }
+    @Test
+    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        assertEquals(new Quantity(4.78, Unit.litre), oneLitre.add(oneGallon));
+    }
 
     @Test
     void givenOneFeetAndOneGallon_WhenCompare_ThenShouldNotBeEqual() {
@@ -296,5 +296,26 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1, Unit.inch);
         assertNotEquals(oneLitre, oneInch);
     }
+
+    @Test
+    void givenOneLitreAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        assertNotEquals(oneLitre, oneFeet);
+    }
+    @Test
+    void givenOneLitreAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneYard = new Quantity(1, Unit.yard);
+        assertNotEquals(oneLitre, oneYard);
+    }
+
+    @Test
+    void givenOneGallonAndOneInch_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        Quantity oneInch = new Quantity(1, Unit.inch);
+        assertNotEquals(oneGallon, oneInch);
+    }
+
 
 }

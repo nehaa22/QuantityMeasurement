@@ -25,6 +25,10 @@ public class Quantity {
 
         if (this.unit == Unit.litre && other.unit == Unit.inch || this.unit == Unit.inch && other.unit == Unit.litre)
             return false;
+        if (this.unit == Unit.litre && other.unit == Unit.feet || this.unit == Unit.feet && other.unit == Unit.litre)
+            return false;
+        if (this.unit == Unit.gallon && other.unit == Unit.inch || this.unit == Unit.inch && other.unit == Unit.gallon)
+            return false;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
@@ -39,10 +43,10 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
-        if(this.unit == Unit.inch || this.unit == Unit.feet)
-        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
-        if(this.unit == Unit.litre || this.unit == Unit.gallon)
-            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
-        else return null;
+        if (this.unit == Unit.inch || this.unit == Unit.feet) {
+            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+        }
+        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
+
     }
 }
