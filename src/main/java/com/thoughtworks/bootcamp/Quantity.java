@@ -39,6 +39,10 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
+        if(this.unit == Unit.inch || this.unit == Unit.feet)
         return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+        if(this.unit == Unit.litre || this.unit == Unit.gallon)
+            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
+        else return null;
     }
 }

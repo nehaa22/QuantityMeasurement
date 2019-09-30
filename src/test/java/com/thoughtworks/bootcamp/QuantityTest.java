@@ -267,14 +267,14 @@ public class QuantityTest {
         assertEquals(new Quantity(2, Unit.gallon), oneGallon.add(anotherGallon));
     }
 
-//    @Test
-//    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
-//
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity anotherLitre = new Quantity(1, Unit.litre);
-//        assertEquals(new Quantity(2, Unit.litre), oneLitre.add(anotherLitre));
-//    }
-//
+    @Test
+    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity anotherLitre = new Quantity(1, Unit.litre);
+        assertEquals(new Quantity(2, Unit.litre), oneLitre.add(anotherLitre));
+    }
+
 //    @Test
 //    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
 //
@@ -296,4 +296,5 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1, Unit.inch);
         assertNotEquals(oneLitre, oneInch);
     }
+
 }
