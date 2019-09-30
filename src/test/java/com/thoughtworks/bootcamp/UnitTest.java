@@ -27,11 +27,4 @@ class UnitTest {
         Assertions.assertEquals(36,Unit.yard.convertToBase(1));
     }
 
-
-
-//    @Test
-//    void givenTwoFiftyFourCM_WhenConvertToInches_ThenShouldGetConvert(){
-//        Assertions.assertEquals(1,Unit.cm.convertToBase(2.54),0.01);
-//    }
-
 }

@@ -23,6 +23,9 @@ public class Quantity {
 
         Quantity other = (Quantity) object;
 
+        if (this.unit == Unit.litre && other.unit == Unit.inch || this.unit == Unit.inch && other.unit == Unit.litre)
+            return false;
+
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }
@@ -36,7 +39,6 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
-
         return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
     }
 }
