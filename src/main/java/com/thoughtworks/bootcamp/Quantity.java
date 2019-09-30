@@ -38,7 +38,7 @@ public class Quantity {
 
     public Quantity add(Quantity another) {
 
-        if (this.unit.getBaseUnit(this.unit) != another.unit.getBaseUnit(another.unit)){
+        if (!checkBaseUnit(another)){
             throw new IllegalArgumentException("Unit should be od same type");
         }
 
@@ -47,5 +47,9 @@ public class Quantity {
         }
         return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
 
+    }
+
+      private boolean checkBaseUnit(Quantity another) {
+        return (this.unit.getBaseUnit(this.unit).equals(another.unit.getBaseUnit(another.unit)));
     }
 }
