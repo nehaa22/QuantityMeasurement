@@ -4,6 +4,7 @@ public class Quantity {
 
     private final double value;
     private final Unit unit;
+    private String string;
 
     public Quantity(double value, Unit unit) {
         this.value = value;
@@ -23,17 +24,22 @@ public class Quantity {
 
         Quantity other = (Quantity) object;
 
-        if (!(this.unit.getBaseUnit(this.unit).equals( other.unit.getBaseUnit(other.unit))))
+        if (hasBaseValue(other))
             return false;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }
 
+    private boolean hasBaseValue(Quantity other) {
+        return !(this.unit.getBaseUnit(this.unit)).equals(other.unit.getBaseUnit(other.unit));
+    }
+
+
     public Quantity add(Quantity another) {
 
         if (this.unit.getBaseUnit(this.unit) != another.unit.getBaseUnit(another.unit)){
-            throw new IllegalArgumentException("Unit should be of same type");
+            throw new IllegalArgumentException("Unit should be od same type");
         }
 
         if (this.unit == Unit.inch || this.unit == Unit.feet) {
