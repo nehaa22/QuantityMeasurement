@@ -317,5 +317,19 @@ public class QuantityTest {
         assertNotEquals(oneGallon, oneInch);
     }
 
+    @Test
+    void givenOneGallonAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        assertNotEquals(oneGallon, oneFeet);
+    }
+
+    @Test
+    void givenOneGallonAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        Quantity oneYard = new Quantity(1, Unit.yard);
+        assertNotEquals(oneGallon, oneYard);
+    }
+
 
 }
