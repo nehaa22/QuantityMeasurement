@@ -359,6 +359,34 @@ public class QuantityTest {
             oneLitre.add(oneYard);
         });
     }
+    @Test
+    void givenOneGallonAndOneInch_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = new Quantity(1, Unit.litre);
+        Quantity oneInch = new Quantity(1, Unit.inch);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneInch);
+        });
+    }
+    @Test
+    void givenOneGallonAndOneFeet_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = new Quantity(1, Unit.litre);
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneFeet);
+        });
+    }
+
+    @Test
+    void givenOneGallonAndOneYard_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = new Quantity(1, Unit.litre);
+        Quantity oneYard = new Quantity(1, Unit.yard);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneYard);
+        });
+    }
 
 
 }
