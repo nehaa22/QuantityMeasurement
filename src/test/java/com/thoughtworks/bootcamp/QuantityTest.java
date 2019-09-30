@@ -341,6 +341,24 @@ public class QuantityTest {
             oneLitre.add(oneFeet);
         });
     }
+    @Test
+    void givenOneLitreAndOneInch_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneInch = new Quantity(1, Unit.inch);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneInch);
+        });
+    }
+    @Test
+    void givenOneLitreAndOneYard_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneLitre = new Quantity(1, Unit.litre);
+        Quantity oneYard = new Quantity(1, Unit.yard);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneYard);
+        });
+    }
 
 
 }

@@ -43,6 +43,12 @@ public class Quantity {
         if(this.unit == Unit.litre &&  another.unit == Unit.feet || this.unit == Unit.feet &&  another.unit == Unit.litre) {
             throw new IllegalArgumentException("Unit should be od same type");
         }
+        if(this.unit == Unit.litre &&  another.unit == Unit.inch || this.unit == Unit.inch &&  another.unit == Unit.litre) {
+            throw new IllegalArgumentException("Unit should be od same type");
+        }
+        if(this.unit == Unit.litre &&  another.unit == Unit.yard || this.unit == Unit.yard &&  another.unit == Unit.litre) {
+            throw new IllegalArgumentException("Unit should be od same type");
+        }
 
         if (this.unit == Unit.inch || this.unit == Unit.feet) {
             return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
