@@ -39,14 +39,9 @@ public class Quantity {
     public Quantity add(Quantity another) {
 
         if (!checkBaseUnit(another)) {
-            throw new IllegalArgumentException("Unit should be od same type");
+            throw new IllegalArgumentException("Unit should be of same type");
         }
-
-        if (this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard) {
-            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
-        }
-        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
-
+        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), unit.getBaseUnit(unit));
     }
 
     private boolean checkBaseUnit(Quantity another) {
