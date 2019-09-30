@@ -367,6 +367,13 @@ public class QuantityTest {
         assertEquals(new Quantity(0.0, Unit.inch), zeroYard.add(anotherZeroYard));
     }
 
+    @Test
+    void givenTwoOneYard_WhenAdd_ThenShouldAdd() {
+        Quantity oneYard = new Quantity(1, Unit.yard);
+        Quantity anotherOneYard = new Quantity(1, Unit.yard);
+        assertEquals(new Quantity(72.0, Unit.inch), oneYard.add(anotherOneYard));
+    }
+
 
 }
 
