@@ -360,6 +360,13 @@ public class QuantityTest {
         });
     }
 
+    @Test
+    void givenTwoZeroYard_WhenAdd_ThenShouldAdd() {
+        Quantity zeroYard = new Quantity(0, Unit.yard);
+        Quantity anotherZeroYard = new Quantity(0, Unit.yard);
+        assertEquals(new Quantity(0.0, Unit.inch), zeroYard.add(anotherZeroYard));
+    }
+
 
 }
 
