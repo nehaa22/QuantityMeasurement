@@ -24,7 +24,7 @@ public class Quantity {
 
         Quantity other = (Quantity) object;
 
-        if (hasBaseValue(other))
+        if (!hasBaseValue(other))
             return false;
 
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
@@ -32,7 +32,7 @@ public class Quantity {
     }
 
     private boolean hasBaseValue(Quantity other) {
-        return !(this.unit.getBaseUnit(this.unit)).equals(other.unit.getBaseUnit(other.unit));
+        return (this.unit.getBaseUnit(this.unit)).equals(other.unit.getBaseUnit(other.unit));
     }
 
 
