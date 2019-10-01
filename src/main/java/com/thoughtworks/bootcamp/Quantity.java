@@ -40,7 +40,6 @@ public class Quantity {
      return new Quantity(baseOne.value + baseTwo.value,baseOne.unit);
 
     }
-
     @Override
     public String toString() {
         return "Quantity{" +
