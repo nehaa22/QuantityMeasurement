@@ -176,49 +176,49 @@ class QuantityTest {
         assertEquals(createInch(0.0), zeroInch.add(anotherZero));
     }
 
-//    @Test
-//    void givenZeroInchAndOneInch_WhenAdd_ThenShouldAdd() {
-//        Quantity zeroInch = new Quantity(0, Unit.inch);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//
-//        assertEquals(new Quantity(1.0, Unit.inch), zeroInch.add(oneInch));
-//    }
-//
-//    @Test
-//    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
-//        Quantity zeroInch = new Quantity(1, Unit.inch);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        assertEquals(new Quantity(2.0, Unit.inch), zeroInch.add(oneInch));
-//    }
+    @Test
+    void givenZeroInchAndOneInch_WhenAdd_ThenShouldAdd() {
+        Quantity zeroInch = createInch(0);
+        Quantity oneInch = createInch(1);
 
-//    @Test
-//    void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertEquals(new Quantity(13.0, Unit.inch), oneFeet.add(oneInch));
-//    }
-//
-//    @Test
-//    void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertEquals(new Quantity(13.0, Unit.inch), oneInch.add(oneFeet));
-//    }
-//
-//    @Test
-//    void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd() {
-//        Quantity onefeet = new Quantity(1, Unit.feet);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertEquals(new Quantity(2.0, Unit.feet), onefeet.add(oneFeet));
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity anotherOneGallon = new Quantity(1, Unit.gallon);
-//
-//        assertEquals(oneGallon, anotherOneGallon);
-//    }
+        assertEquals(createInch(1), zeroInch.add(oneInch));
+    }
+
+    @Test
+    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
+        Quantity zeroInch = createInch(1);
+        Quantity oneInch = createInch(1);
+        assertEquals(createInch(2), zeroInch.add(oneInch));
+    }
+
+    @Test
+    void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
+        Quantity oneInch = createInch(1);
+        Quantity oneFeet = createFeet(1);
+        assertEquals(createInch(13.0), oneFeet.add(oneInch));
+    }
+
+    @Test
+    void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
+        Quantity oneInch = createInch(1);
+        Quantity oneFeet = createFeet(1);
+        assertEquals(createInch(13), oneInch.add(oneFeet));
+    }
+
+    @Test
+    void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd() {
+        Quantity onefeet = createFeet(1);
+        Quantity oneFeet = createFeet(1);
+        assertEquals(createFeet(2), onefeet.add(oneFeet));
+    }
+
+    @Test
+    void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneGallon = new Quantity(1, Unit.gallon);
+        Quantity anotherOneGallon = new Quantity(1, Unit.gallon);
+
+        assertEquals(oneGallon, anotherOneGallon);
+    }
 
 //    @Test
 //    void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
