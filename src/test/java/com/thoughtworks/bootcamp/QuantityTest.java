@@ -18,8 +18,8 @@ class QuantityTest {
 
     @Test
     void givenOneFeetAndOneFeet_WhenCompare_ThenShouldBeEqual() {
-        Quantity oneFeetOne = new Quantity(1.0, new Feet());
-        Quantity oneFeetTwo = new Quantity(1.0, new Feet());
+        Quantity oneFeetOne = createFeet(1);
+        Quantity oneFeetTwo =createFeet(1);
         assertEquals(oneFeetOne, oneFeetTwo);
   }
 
