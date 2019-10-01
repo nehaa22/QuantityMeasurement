@@ -1,12 +1,14 @@
 package com.thoughtworks.bootcamp;
 
+import com.thoughtworks.bootcamp.Units.UnitInterface;
+
 public class Quantity {
 
     private final double value;
-    private final Unit unit;
+    private final UnitInterface unit;
     private String string;
 
-    public Quantity(double value, Unit unit) {
+    public Quantity(double value, UnitInterface unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -23,28 +25,21 @@ public class Quantity {
         }
 
         Quantity other = (Quantity) object;
-
-        if (!hasBaseValue(other))
-            return false;
-
-        return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
-
+        Quantity baseOne = unit.convertToBase(value);
+        Quantity baseTwo = other.unit.convertToBase(other.value);
+        return Math.abs(baseOne.value - baseTwo.value) <= 0.01 &&  baseOne.unit.equals(baseTwo.unit);
     }
-
-    private boolean hasBaseValue(Quantity other) {
-        return (this.unit.getBaseUnit(this.unit)).equals(other.unit.getBaseUnit(other.unit));
-    }
-
 
     public Quantity add(Quantity another) {
 
-        if (!checkBaseUnit(another)) {
-            throw new IllegalArgumentException("Unit should be of same type");
-        }
-        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), unit.getBaseUnit(unit));
+        Quantity baseOne = unit.convertToBase(value);
+        Quantity baseTwo = another.unit.convertToBase(another.value);
+        if (baseOne.unit != baseTwo.unit)
+            throw new IllegalArgumentException("Unit should be  same type");
+
+     return new Quantity(baseOne.value + baseTwo.value,baseOne.unit);
+
     }
 
-    private boolean checkBaseUnit(Quantity another) {
-        return (this.unit.getBaseUnit(this.unit).equals(another.unit.getBaseUnit(another.unit)));
-    }
+
 }
