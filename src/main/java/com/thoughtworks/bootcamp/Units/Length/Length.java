@@ -1,7 +1,7 @@
 package com.thoughtworks.bootcamp.Units.Length;
 
-import com.thoughtworks.bootcamp.Units.UnitInterface;
+import com.thoughtworks.bootcamp.Units.Unit;
 
-interface Length extends UnitInterface {
+interface Length extends Unit {
 
 }

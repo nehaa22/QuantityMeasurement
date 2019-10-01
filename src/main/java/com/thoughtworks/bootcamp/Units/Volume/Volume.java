@@ -1,4 +1,6 @@
 package com.thoughtworks.bootcamp.Units.Volume;
 
-public interface Volume {
+import com.thoughtworks.bootcamp.Units.Unit;
+
+public interface Volume extends Unit {
 }

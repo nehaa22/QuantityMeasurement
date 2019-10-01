@@ -2,9 +2,9 @@ package com.thoughtworks.bootcamp.Units.Length;
 
 import com.thoughtworks.bootcamp.Quantity;
 import com.thoughtworks.bootcamp.QuantityFactory;
-import com.thoughtworks.bootcamp.Units.UnitInterface;
+import com.thoughtworks.bootcamp.Units.Unit;
 
-public class Yard implements UnitInterface, Length {
+public class Yard implements Unit, Length {
 
     public Quantity convertToBase(double value){
         double conversionFactor = 36;

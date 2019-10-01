@@ -214,166 +214,164 @@ class QuantityTest {
 
     @Test
     void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
-        Quantity oneGallon = new Quantity(1, Unit.gallon);
-        Quantity anotherOneGallon = new Quantity(1, Unit.gallon);
-
+        Quantity oneGallon = createGallon(1);
+        Quantity anotherOneGallon = createGallon(1);
         assertEquals(oneGallon, anotherOneGallon);
     }
 
-//    @Test
-//    void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
-//
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity anotherOneLitre = new Quantity(1, Unit.litre);
-//
-//        assertEquals(oneLitre, anotherOneLitre);
-//    }
-//
-//    @Test
-//    void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity ThreeDotSevenEightLitre = new Quantity(3.78, Unit.litre);
-//
-//        assertEquals(oneGallon, ThreeDotSevenEightLitre);
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity anotherGallon = new Quantity(1, Unit.gallon);
-//        assertEquals(new Quantity(2, Unit.gallon), oneGallon.add(anotherGallon));
-//    }
-//
-//    @Test
-//    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity anotherLitre = new Quantity(1, Unit.litre);
-//        assertEquals(new Quantity(2, Unit.litre), oneLitre.add(anotherLitre));
-//    }
-//
-//    @Test
-//    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        assertEquals(new Quantity(4.78, Unit.litre), oneLitre.add(oneGallon));
-//    }
+    @Test
+    void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
 
-//    @Test
-//    void givenOneFeetAndOneGallon_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertNotEquals(oneGallon, oneFeet);
-//
-//    }
-//
-//    @Test
-//    void givenOneLitreAndOneInch_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        assertNotEquals(oneLitre, oneInch);
-//    }
-//
-//    @Test
-//    void givenOneLitreAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertNotEquals(oneLitre, oneFeet);
-//    }
-//    @Test
-//    void givenOneLitreAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneYard = new Quantity(1, Unit.yard);
-//        assertNotEquals(oneLitre, oneYard);
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneInch_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        assertNotEquals(oneGallon, oneInch);
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertNotEquals(oneGallon, oneFeet);
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneGallon = new Quantity(1, Unit.gallon);
-//        Quantity oneYard = new Quantity(1, Unit.yard);
-//        assertNotEquals(oneGallon, oneYard);
-//    }
-//
-//    @Test
-//    void givenOneLitreAndOneFeet_WhenAdd_ThenShouldThrowException() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneLitre.add(oneFeet);
-//        });
-//    }
-//    @Test
-//    void givenOneLitreAndOneInch_WhenAdd_ThenShouldThrowException() {
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneLitre.add(oneInch);
-//        });
-//    }
-//    @Test
-//    void givenOneLitreAndOneYard_WhenAdd_ThenShouldThrowException() {
-//
-//        Quantity oneLitre = new Quantity(1, Unit.litre);
-//        Quantity oneYard = new Quantity(1, Unit.yard);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneLitre.add(oneYard);
-//        });
-//    }
-//    @Test
-//    void givenOneGallonAndOneInch_WhenAdd_ThenShouldThrowException() {
-//
-//        Quantity oneGallon = new Quantity(1, Unit.litre);
-//        Quantity oneInch = new Quantity(1, Unit.inch);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneGallon.add(oneInch);
-//        });
-//    }
-//    @Test
-//    void givenOneGallonAndOneFeet_WhenAdd_ThenShouldThrowException() {
-//
-//        Quantity oneGallon = new Quantity(1, Unit.litre);
-//        Quantity oneFeet = new Quantity(1, Unit.feet);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneGallon.add(oneFeet);
-//        });
-//    }
-//
-//    @Test
-//    void givenOneGallonAndOneYard_WhenAdd_ThenShouldThrowException() {
-//
-//        Quantity oneGallon = new Quantity(1, Unit.litre);
-//        Quantity oneYard = new Quantity(1, Unit.yard);
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            oneGallon.add(oneYard);
-//        });
-//    }
-//
-//    @Test
-//    void givenTwoZeroYard_WhenAdd_ThenShouldAdd() {
-//        Quantity zeroYard = new Quantity(0, Unit.yard);
-//        Quantity anotherZeroYard = new Quantity(0, Unit.yard);
-//        assertEquals(new Quantity(0.0, Unit.inch), zeroYard.add(anotherZeroYard));
-//    }
-//
-//    @Test
-//    void givenTwoOneYard_WhenAdd_ThenShouldAdd() {
-//        Quantity oneYard = new Quantity(1, Unit.yard);
-//        Quantity anotherOneYard = new Quantity(1, Unit.yard);
-//        assertEquals(new Quantity(72.0, Unit.inch), oneYard.add(anotherOneYard));
-//    }
+        Quantity oneLitre = createLitre(1);
+        Quantity anotherOneLitre = createLitre(1);
+        assertEquals(oneLitre, anotherOneLitre);
+    }
+
+    @Test
+    void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneGallon = createGallon(1);
+        Quantity ThreeDotSevenEightLitre = createLitre(3.78);
+
+        assertEquals(oneGallon, ThreeDotSevenEightLitre);
+    }
+
+    @Test
+    void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
+        Quantity oneGallon = createGallon(1);
+        Quantity anotherGallon = createGallon(1);
+        assertEquals(createGallon(2), oneGallon.add(anotherGallon));
+    }
+
+    @Test
+    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
+        Quantity oneLitre = createLitre(1);
+        Quantity anotherLitre =createLitre(1);
+        assertEquals(createLitre(2), oneLitre.add(anotherLitre));
+    }
+
+    @Test
+    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneGallon = createGallon(1);
+        assertEquals(createLitre(4.78), oneLitre.add(oneGallon));
+    }
+
+    @Test
+    void givenOneFeetAndOneGallon_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = createGallon(1);
+        Quantity oneFeet = createFeet(1);
+        assertNotEquals(oneGallon, oneFeet);
+
+    }
+
+    @Test
+    void givenOneLitreAndOneInch_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneInch = createInch(1);
+        assertNotEquals(oneLitre, oneInch);
+    }
+
+    @Test
+    void givenOneLitreAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneFeet = createFeet(1);
+        assertNotEquals(oneLitre, oneFeet);
+    }
+    @Test
+    void givenOneLitreAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneYard = createYard(1);
+        assertNotEquals(oneLitre, oneYard);
+    }
+
+    @Test
+    void givenOneGallonAndOneInch_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = createGallon(1);
+        Quantity oneInch = createInch(1);
+        assertNotEquals(oneGallon, oneInch);
+    }
+
+    @Test
+    void givenOneGallonAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = createGallon(1);
+        Quantity oneFeet = createFeet(1);
+        assertNotEquals(oneGallon, oneFeet);
+    }
+
+    @Test
+    void givenOneGallonAndOneYard_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneGallon = createGallon(1);
+        Quantity oneYard = createYard(1);
+        assertNotEquals(oneGallon, oneYard);
+    }
+
+    @Test
+    void givenOneLitreAndOneFeet_WhenAdd_ThenShouldThrowException() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneFeet = createFeet(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneFeet);
+        });
+    }
+    @Test
+    void givenOneLitreAndOneInch_WhenAdd_ThenShouldThrowException() {
+        Quantity oneLitre = createLitre(1);
+        Quantity oneInch = createInch(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneInch);
+        });
+  }
+    @Test
+    void givenOneLitreAndOneYard_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneLitre = createLitre(1);
+        Quantity oneYard = createYard(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLitre.add(oneYard);
+        });
+    }
+    @Test
+    void givenOneGallonAndOneInch_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = createLitre(1);
+        Quantity oneInch = createInch(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneInch);
+        });
+    }
+    @Test
+    void givenOneGallonAndOneFeet_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = createGallon(1);
+        Quantity oneFeet = createFeet(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneFeet);
+        });
+    }
+
+    @Test
+    void givenOneGallonAndOneYard_WhenAdd_ThenShouldThrowException() {
+
+        Quantity oneGallon = createGallon(1);
+        Quantity oneYard = createYard(1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneYard);
+        });
+    }
+
+   @Test
+   void givenTwoZeroYard_WhenAdd_ThenShouldAdd() {
+        Quantity zeroYard = createYard(0);
+        Quantity anotherZeroYard = createYard(0);
+       assertEquals(createInch(0), zeroYard.add(anotherZeroYard));
+  }
+
+    @Test
+    void givenTwoOneYard_WhenAdd_ThenShouldAdd() {
+        Quantity oneYard = createYard(1);
+        Quantity anotherOneYard = createYard(1);
+        assertEquals(createInch(72), oneYard.add(anotherOneYard));
+    }
 
 
 }

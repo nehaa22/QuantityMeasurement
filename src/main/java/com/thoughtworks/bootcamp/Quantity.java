@@ -1,14 +1,14 @@
 package com.thoughtworks.bootcamp;
 
-import com.thoughtworks.bootcamp.Units.UnitInterface;
+import com.thoughtworks.bootcamp.Units.Unit;
 
 public class Quantity {
 
     private final double value;
-    private final UnitInterface unit;
+    private final Unit unit;
     private String string;
 
-    public Quantity(double value, UnitInterface unit) {
+    Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -39,13 +39,5 @@ public class Quantity {
 
      return new Quantity(baseOne.value + baseTwo.value,baseOne.unit);
 
-    }
-    @Override
-    public String toString() {
-        return "Quantity{" +
-                "value=" + value +
-                ", unit=" + unit +
-                ", string='" + string + '\'' +
-                '}';
     }
 }
