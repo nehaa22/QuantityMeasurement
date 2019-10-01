@@ -34,7 +34,7 @@ public class Quantity {
 
         Quantity baseOne = unit.convertToBase(value);
         Quantity baseTwo = another.unit.convertToBase(another.value);
-        if (baseOne.unit != baseTwo.unit)
+        if (!(baseOne.unit.equals(baseTwo.unit)))
             throw new IllegalArgumentException("Unit should be  same type");
 
      return new Quantity(baseOne.value + baseTwo.value,baseOne.unit);

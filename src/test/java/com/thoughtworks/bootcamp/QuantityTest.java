@@ -1,11 +1,8 @@
 package com.thoughtworks.bootcamp;
 
-import com.thoughtworks.bootcamp.Units.Length.Feet;
-import com.thoughtworks.bootcamp.Units.Length.Inch;
 import org.junit.jupiter.api.Test;
 
-import static com.thoughtworks.bootcamp.QuantityFactory.createFeet;
-import static com.thoughtworks.bootcamp.QuantityFactory.createInch;
+import static com.thoughtworks.bootcamp.QuantityFactory.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class QuantityTest {
@@ -131,54 +128,54 @@ class QuantityTest {
 
     @Test
     void givenOneYardAndOneYard_WhenCompare_ThenShouldBeEqual() {
-        Quantity twelveInch = createInch(12);
-        Quantity oneYard = createYard(1);
-        assertEquals(twelveInch, oneYard);
+        Quantity oneYardOne = createYard(1);
+        Quantity oneYardTwo = createYard(1);
+        assertEquals(oneYardOne, oneYardTwo);
     }
 
-//    @Test
-//    void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity twoYard = new Quantity(2.0, Unit.yard);
-//        Quantity oneYard = new Quantity(1.0, Unit.yard);
-//        assertNotEquals(twoYard, oneYard);
-//    }
-//
-//    @Test
-//    void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneYard = new Quantity(1.0, Unit.yard);
-//        Quantity threeFeet = new Quantity(3.0, Unit.feet);
-//        assertEquals(oneYard, threeFeet);
-//    }
-//
-//    @Test
-//    void givenOneYardAndThirtySixInch_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneYard = new Quantity(1.0, Unit.yard);
-//        Quantity thirtySixFeet = new Quantity(36.0, Unit.inch);
-//
-//        assertEquals(oneYard, thirtySixFeet);
-//    }
-//
-//    @Test
-//    void givenOneYardAndSixInch_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneYard = new Quantity(1.0, Unit.yard);
-//        Quantity sixInch = new Quantity(6.0, Unit.inch);
-//        assertNotEquals(oneYard, sixInch);
-//    }
-//
-//    @Test
-//    void givenOneYardAndSixFeet_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneYard = new Quantity(1.0, Unit.yard);
-//        Quantity sixFeet = new Quantity(6.0, Unit.feet);
-//        assertNotEquals(oneYard, sixFeet);
-//    }
-//
-//    @Test
-//    void givenTwoZeroInch_WhenAdd_ThenShouldAdd() {
-//        Quantity zeroInch = new Quantity(0, Unit.inch);
-//        Quantity anotherZero = new Quantity(0, Unit.inch);
-//        assertEquals(new Quantity(0.0, Unit.inch), zeroInch.add(anotherZero));
-//    }
-//
+    @Test
+    void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity twoYard = createYard(2);
+        Quantity oneYard = createYard(1);
+        assertNotEquals(twoYard, oneYard);
+    }
+
+    @Test
+    void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneYard = createYard(1);
+        Quantity threeFeet =createFeet(3);
+        assertEquals(oneYard, threeFeet);
+    }
+
+    @Test
+    void givenOneYardAndThirtySixInch_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneYard = createYard(1);
+        Quantity thirtySixFeet = createInch(36);
+
+        assertEquals(oneYard, thirtySixFeet);
+    }
+
+    @Test
+    void givenOneYardAndSixInch_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneYard = createYard(1);
+        Quantity sixInch = createInch(6);
+        assertNotEquals(oneYard, sixInch);
+    }
+
+    @Test
+    void givenOneYardAndSixFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneYard = createYard(1);
+        Quantity sixFeet = createFeet(6);
+        assertNotEquals(oneYard, sixFeet);
+    }
+
+    @Test
+    void givenTwoZeroInch_WhenAdd_ThenShouldAdd() {
+        Quantity zeroInch = createInch(0);
+        Quantity anotherZero = createInch(0);
+        assertEquals(createInch(0.0), zeroInch.add(anotherZero));
+    }
+
 //    @Test
 //    void givenZeroInchAndOneInch_WhenAdd_ThenShouldAdd() {
 //        Quantity zeroInch = new Quantity(0, Unit.inch);
