@@ -10,7 +10,7 @@ public class Feet implements Length, UnitInterface {
 
     public Quantity convertToBase(double value) {
         double conversionFactor = 12;
-        return QuantityFactory.createFeet(conversionFactor * value);
+        return QuantityFactory.createInch(conversionFactor * value);
     }
 
     @Override

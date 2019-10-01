@@ -4,14 +4,15 @@ import com.thoughtworks.bootcamp.Units.Length.Feet;
 import com.thoughtworks.bootcamp.Units.Length.Inch;
 import org.junit.jupiter.api.Test;
 
+import static com.thoughtworks.bootcamp.QuantityFactory.createFeet;
 import static org.junit.jupiter.api.Assertions.*;
 
 class QuantityTest {
 
     @Test
     void givenZeroFeetAndZeoFeet_WhenCompare_ThenShouldBeEqual() {
-        Quantity zeroFeetOne = QuantityFactory.createFeet(0);
-        Quantity zeroFeetTwo = QuantityFactory.createFeet(0);
+        Quantity zeroFeetOne = createFeet(0);
+        Quantity zeroFeetTwo = createFeet(0);
         assertEquals(zeroFeetOne, zeroFeetTwo);
     }
 
@@ -35,76 +36,76 @@ class QuantityTest {
         String dummyString = "TDD";
         assertNotEquals(oneFeetOne, dummyString);
     }
-//
-//    @Test
-//    void givenOneFeetAndNull_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneFeetOne = new Quantity(1.0,new Feet());
-//        Quantity nullObject = null;
-//        assertNotEquals(oneFeetOne, nullObject);
-//    }
-//
-//    @Test
-//    void givenSameObect_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneFeet = new Quantity(1.0, new Feet());
-//        assertEquals(oneFeet, oneFeet);
-//    }
-//
-//
-//    @Test
-//    void givenZeroInchAndZeoInch_WhenEquals_ThenShouldBeEqual() {
-//        Quantity zeroInchOne = new Quantity(0.0, new Inch());
-//        Quantity zeroInchTwo = new Quantity(0.0, new Inch());
-//        assertEquals(zeroInchOne, zeroInchTwo);
-//    }
-//
-//    @Test
-//    void givenOneInchAndOneInch_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneInchOne = new Quantity(1.0, new Inch());
-//        Quantity oneInchTwo = new Quantity(1.0, new Inch());
-//        assertEquals(oneInchOne, oneInchTwo);
-//    }
 
-//    @Test
-//    void givenOneInchAndTwoInch_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneInch = new Quantity(1.0, new Inch());
-//        Quantity twoInch = new Quantity(2.0, new Inch());
-//        assertNotEquals(oneInch, twoInch);
-//    }
-//
-//    @Test
-//    void givenOneInchAndString_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneInch = new Quantity(1.0, new Inch());
-//        String dummyString = "TDD";
-//        assertNotEquals(oneInch, dummyString);
-//    }
-//
-//    @Test
-//    void givenOneInchAndNull_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneInch = new Quantity(1.0, new Inch());
-//        Quantity nullObject = null;
-//        assertNotEquals(oneInch, nullObject);
-//    }
-//
-//    @Test
-//    void givenSameInchObejct_WhenCompare_ThenShouldBeEqual() {
-//        Quantity oneInch = new Quantity(1.0, new Inch());
-//        assertEquals(oneInch, oneInch);
-//    }
-//
-//    @Test
-//    void givenOneInchAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
-//        Quantity oneInch = new Quantity(1.0, new Inch());
-//        Quantity oneFeet = new Quantity(1.0, new Feet());
-//        assertNotEquals(oneInch, oneFeet);
-//    }
+    @Test
+    void givenOneFeetAndNull_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneFeetOne = new Quantity(1.0,new Feet());
+        Quantity nullObject = null;
+        assertNotEquals(oneFeetOne, nullObject);
+    }
 
-//    @Test
-//    void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
-//        Quantity zeroInch = new Quantity(0.0, new Inch());
-//        Quantity zeroFeet = new Quantity(0.0, new Feet());
-//        assertEquals(zeroInch, zeroFeet);
-//    }
-//
+    @Test
+    void givenSameObect_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneFeet = new Quantity(1.0, new Feet());
+        assertEquals(oneFeet, oneFeet);
+    }
+
+
+    @Test
+    void givenZeroInchAndZeoInch_WhenEquals_ThenShouldBeEqual() {
+        Quantity zeroInchOne = new Quantity(0.0, new Inch());
+        Quantity zeroInchTwo = new Quantity(0.0, new Inch());
+        assertEquals(zeroInchOne, zeroInchTwo);
+    }
+
+    @Test
+    void givenOneInchAndOneInch_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneInchOne = new Quantity(1.0, new Inch());
+        Quantity oneInchTwo = new Quantity(1.0, new Inch());
+        assertEquals(oneInchOne, oneInchTwo);
+    }
+
+    @Test
+    void givenOneInchAndTwoInch_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, new Inch());
+        Quantity twoInch = new Quantity(2.0, new Inch());
+        assertNotEquals(oneInch, twoInch);
+    }
+
+    @Test
+    void givenOneInchAndString_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, new Inch());
+        String dummyString = "TDD";
+        assertNotEquals(oneInch, dummyString);
+    }
+
+    @Test
+    void givenOneInchAndNull_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, new Inch());
+        Quantity nullObject = null;
+        assertNotEquals(oneInch, nullObject);
+    }
+
+    @Test
+    void givenSameInchObejct_WhenCompare_ThenShouldBeEqual() {
+        Quantity oneInch = new Quantity(1.0, new Inch());
+        assertEquals(oneInch, oneInch);
+    }
+
+    @Test
+    void givenOneInchAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, new Inch());
+        Quantity oneFeet = new Quantity(1.0, new Feet());
+        assertNotEquals(oneInch, oneFeet);
+    }
+
+    @Test
+    void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
+        Quantity zeroInch = new Quantity(0.0, new Inch());
+        Quantity zeroFeet = new Quantity(0.0, new Feet());
+        assertEquals(zeroInch, zeroFeet);
+    }
+
 //    @Test
 //    void givenZeroInchAndOneFeet_WhenCompare_ThenNOtShouldBeEqual() {
 //        Quantity zeroInch = new Quantity(0.0, new Inch() );

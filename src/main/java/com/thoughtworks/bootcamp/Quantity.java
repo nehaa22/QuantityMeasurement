@@ -41,5 +41,12 @@ public class Quantity {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Quantity{" +
+                "value=" + value +
+                ", unit=" + unit +
+                ", string='" + string + '\'' +
+                '}';
+    }
 }
