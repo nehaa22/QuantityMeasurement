@@ -8,7 +8,7 @@ public class Quantity {
     public final Unit unit;
     private String string;
 
-    public  Quantity(double value, Unit unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
