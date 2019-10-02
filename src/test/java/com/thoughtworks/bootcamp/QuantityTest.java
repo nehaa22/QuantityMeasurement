@@ -184,19 +184,19 @@ class QuantityTest {
         assertEquals(createInch(1), zeroInch.add(oneInch));
     }
 
-//    @Test
-//    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
-//        Quantity zeroInch = createInch(1);
-//        Quantity oneInch = createInch(1);
-//        assertEquals(createInch(2), zeroInch.add(oneInch));
-//    }
-//
-//    @Test
-//    void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
-//        Quantity oneInch = createInch(1);
-//        Quantity oneFeet = createFeet(1);
-//        assertEquals(createInch(13.0), oneFeet.add(oneInch));
-//    }
+    @Test
+    void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
+        AddableQuantity zeroInch = createInch(1);
+        AddableQuantity oneInch = createInch(1);
+        assertEquals(createInch(2), zeroInch.add(oneInch));
+    }
+
+    @Test
+    void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
+        AddableQuantity oneInch = createInch(1);
+        AddableQuantity oneFeet = createFeet(1);
+        assertEquals(createInch(13.0), oneFeet.add(oneInch));
+    }
 //
 //    @Test
 //    void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {

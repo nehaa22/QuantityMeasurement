@@ -4,4 +4,5 @@ import com.thoughtworks.bootcamp.Quantity;
 
 public interface Unit {
     Quantity convertToBase(double value);
+
 }
