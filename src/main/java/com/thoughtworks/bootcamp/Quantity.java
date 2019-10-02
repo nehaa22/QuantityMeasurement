@@ -5,10 +5,10 @@ import com.thoughtworks.bootcamp.Units.Unit;
 public class Quantity {
 
     private final double value;
-    private final Unit unit;
+    public final Unit unit;
     private String string;
 
-    Quantity(double value, Unit unit) {
+    public  Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }

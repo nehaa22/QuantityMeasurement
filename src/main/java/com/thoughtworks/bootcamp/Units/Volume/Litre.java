@@ -4,7 +4,7 @@ import com.thoughtworks.bootcamp.Quantity;
 import com.thoughtworks.bootcamp.QuantityFactory;
 import com.thoughtworks.bootcamp.Units.Unit;
 
-public class Litre  implements Unit,Volume {
+public class Litre  implements Volume {
 
 
     public Quantity convertToBase(double value) {

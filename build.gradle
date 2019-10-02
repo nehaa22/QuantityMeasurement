@@ -1,11 +1,22 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 group 'com.thoughtworks.bootcamp'
 version '1.0-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_11
 repositories {
     mavenCentral()
+}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.thoughtworks.bootcamp'
+            artifactId = 'QualityMeasurement'
+            version = '1.0-SNAPSHOT'
+            from components.java
+        }
+    }
 }
 test {
     useJUnitPlatform()
