@@ -2,7 +2,6 @@ package com.thoughtworks.bootcamp.Units.Volume;
 
 import com.thoughtworks.bootcamp.Quantity;
 import com.thoughtworks.bootcamp.QuantityFactory;
-import com.thoughtworks.bootcamp.Units.Unit;
 
 public class Gallon implements Volume {
 

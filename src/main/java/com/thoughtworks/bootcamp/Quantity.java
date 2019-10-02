@@ -4,7 +4,7 @@ import com.thoughtworks.bootcamp.Units.Unit;
 
 public class Quantity {
 
-    private final double value;
+    protected final double value;
     public final Unit unit;
     private String string;
 
@@ -30,14 +30,4 @@ public class Quantity {
         return Math.abs(baseOne.value - baseTwo.value) <= 0.01 &&  baseOne.unit.equals(baseTwo.unit);
     }
 
-    public Quantity add(Quantity another) {
-
-        Quantity baseOne = unit.convertToBase(value);
-        Quantity baseTwo = another.unit.convertToBase(another.value);
-        if (!(baseOne.unit.equals(baseTwo.unit)))
-            throw new IllegalArgumentException("Unit should be  same type");
-
-     return new Quantity(baseOne.value + baseTwo.value,baseOne.unit);
-
-    }
 }
