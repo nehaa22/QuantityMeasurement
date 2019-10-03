@@ -5,17 +5,15 @@ import com.thoughtworks.bootcamp.QuantityFactory;
 
 public class Celcius implements Temperature {
 
-        public Quantity convertToBase(double value) {
-            double conversionFactor = 12;
-            return QuantityFactory.createInch(conversionFactor * value);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            return o instanceof com.thoughtworks.bootcamp.Units.Length.Feet;
-        }
-
+    public Quantity convertToBase(double value) {
+        return QuantityFactory.createCelcius(value);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof Temperature;
+    }
+}
 
 
 
